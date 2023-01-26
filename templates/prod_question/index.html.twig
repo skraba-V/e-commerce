@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProdQuestion index{% endblock %}
+
+{% block body %}
+ <link rel="stylesheet" href="{{asset('style.css')}}">
+<div class="text-center loww mb-5">
+    <h1>ProdQuestion index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Question</th>
+                <th>QuestionDate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for question in questions %}
+            <tr>
+                <td>{{ question.id }}</td>
+                <td>{{ question.question }}</td>
+                <td>{{ question.questionDate ? question.questionDate|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_prod_question_edit', {'id': question.id}) }}">edit</a>
+                    {{ include('prod_question/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

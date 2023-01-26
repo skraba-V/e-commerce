@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+ <link rel="stylesheet" href="{{asset('style.css')}}">
+    <h1 class="loww">User</h1>
+    <div class="container"> 
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th class="table-light">Email</th>
+                <td class="table-light">{{ user.email }}</td>
+            </tr>
+            <tr>
+            <tr>
+                <th class="table-light">FName</th>
+                <td class="table-light">{{ user.fName }}</td>
+            </tr>
+            <tr>
+                <th class="table-light">LName</th>
+                <td class="table-light">{{ user.lName }}</td>
+            </tr>
+            <tr>
+                <th class="table-light">Address</th>
+                <td class="table-light">{{ user.address }}</td>
+            </tr>
+            <tr>
+                <th class="table-light">BanStatus</th>
+                <td class="table-light">{{ user.banStatus ? user.banStatus|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="table-light">Picture</th>
+                <td class="table-light">{{ user.picture }}</td>
+            </tr>
+            <tr>
+                <th class="table-light">IsVerified</th>
+                <td class="table-light">{{ user.isVerified ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a class = "btn btn-success" href="{{ path('app_user_index') }}">back to list</a>
+
+    <a class = "btn btn-warning" href="{{ path('app_user_edit') }}">edit</a>
+    {{ include('user/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}

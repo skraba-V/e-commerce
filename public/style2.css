@@ -1,0 +1,79 @@
+* {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2vw;
+}
+
+.btnfont {
+    font-size: 1.3vw;
+}
+
+q {
+    font-size: 1.2vw;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    /* background-color: #f1f1f1; */
+    position: absolute;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    /* background-color: #04AA6D; */
+    /* color: white; */
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: rgb(92, 89, 89);
+    /* color: white; */
+}
+
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+.imgsize {
+    max-width: 420px;
+    max-height: 420px;
+}
+
+@media screen and (max-width: 1200px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+    }
+    .sidebar a {
+        display: flex;
+        justify-content: between;
+        /* float: left; */
+    }
+    div.content {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}

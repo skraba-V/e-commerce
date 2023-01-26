@@ -1,0 +1,391 @@
+* {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2vw;
+}
+
+.btnfont {
+    font-size: 1.3vw;
+}
+
+q {
+    font-size: 1.2vw;
+}
+
+
+/* a {
+    font-size: ;
+} */
+
+.containerr {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    float: left;
+    transform: translate(-50%, -50%);
+}
+
+.slideshow-container {
+    position: relative;
+}
+
+
+/* Slides */
+
+.mySlides {
+    display: none;
+    padding: 80px 80px 10px 80px;
+    text-align: center;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #888;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+
+/* The dot/bullet/indicator container */
+
+.dot-container {
+    text-align: center;
+    padding: 20px 20px 80px 20px;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.author {
+    color: cornflowerblue;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section:nth-child(1) {
+    color: #e0ffff;
+}
+
+section:nth-child(2) {
+    color: #42455a;
+    background: #e0ffff;
+}
+
+section:nth-child(3) {
+    color: #e0ffff;
+}
+
+section:nth-child(4) {
+    color: #42455a;
+    /* background: #e0ffff; */
+}
+
+section h1 {
+    font-size: 3rem;
+    margin: 20px;
+}
+
+section h2 {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+section .text-container {
+    display: flex;
+}
+
+section .text-container .text-box h3 {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+    section h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    /* section .text-container {
+        flex-direction: column;
+    } */
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+footer {
+    height: 500px;
+}
+
+.imgfooter {
+    width: 100%;
+}
+
+.bi {
+    font-size: 20px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.bi:hover {
+    color: gray;
+}
+
+li {
+    cursor: pointer;
+    list-style: none;
+    margin-top: 5px;
+    transition: .2s;
+}
+
+li:hover {
+    color: gray;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.send {
+    transition: .2s;
+}
+
+.send:hover {
+    background-color: gray;
+}
+
+@media screen and (max-width:500px) {
+    imgfooter {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:501px) and (max-width:768px) {
+    imgfooter {
+        width: 100%;
+    }
+    .bi {
+        font-size: 20px;
+    }
+}
+
+.boxborder {
+    border: none !important;
+}
+
+.socialmediaText {
+    font-weight: bolder;
+}
+
+.test31 {
+    width: 80%;
+    padding: 0;
+}
+
+.igpicture {
+    position: relative;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    /* background-size: cover;
+    background-position: center; */
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.igpicture:hover .image {
+    background-color: rgba(0, 0, 0, 0.601) !important;
+    opacity: 0.5;
+}
+
+.igpicture:hover .middle {
+    opacity: 1;
+}
+
+.random {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.mico {
+    color: red;
+}
+
+.maca {
+    width: 100%;
+    height: 20rem; 
+    background-size: cover;
+    background-position: center; 
+    object-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slide {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+
+.show {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content {
+    position: relative;
+    z-index: 1;
+    max-width: 550px;
+}
+
+.banlogo {
+    max-width: 250px;
+}
+
+.come {
+    background-color: pink;
+}
+
+
+.move {
+    color: white;
+    font-size: 5rem;
+}
+
+.pio {
+    height: 5rem;
+}
+
+
+.slikaop {
+    width: 100%;
+    height: 20rem; 
+    background-size: cover;
+    background-position: center; 
+    object-position: center;
+}
+ 
+.koje {
+    background-color: rgba(0, 0, 0, 0.23);
+    z-index: 2244;
+}
+
+
+.ici {
+    width: 15rem;
+    background-color: rgb(245, 235, 236);
+}
+
+.marg {
+    margin-top: 10rem;
+}
+
+
+.loww {
+    margin-top: 10rem;
+}

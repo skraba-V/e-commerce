@@ -1,0 +1,427 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product{% endblock %}
+
+{% block stylesheets %}
+ 
+<style>
+#full-stars-example-two .rating-group {
+  display: inline-flex;
+}
+#full-stars-example-two .rating__icon {
+  pointer-events: none;
+}
+#full-stars-example-two .rating__input {
+  position: absolute !important;
+  left: -9999px !important;
+}
+#full-stars-example-two .rating__input--none {
+  display: none;
+}
+#full-stars-example-two .rating__label {
+  cursor: pointer;
+  padding: 0 0.1em;
+  font-size: 2rem;
+}
+#full-stars-example-two .rating__icon--star {
+  color: orange;
+}
+#full-stars-example-two .rating__input:checked ~ .rating__label .rating__icon--star {
+  color: #ddd;
+}
+#full-stars-example-two .rating-group:hover .rating__label .rating__icon--star {
+  color: orange;
+}
+#full-stars-example-two .rating__input:hover ~ .rating__label .rating__icon--star {
+  color: #ddd;
+}
+.coloured {
+  color: orange;
+}
+.loww {
+    margin-top: 10rem;
+}
+
+nav {
+    background-color:  rgba(0, 0, 0, 0.23);
+}
+</style>
+ 
+<link rel="stylesheet" href="details.css">
+
+{% endblock %}
+
+{# {% block stylesheets %} #}
+{# /* <style>
+#full-stars-example-two .rating-group {
+  display: inline-flex;
+}
+#full-stars-example-two .rating__icon {
+  pointer-events: none;
+}
+#full-stars-example-two .rating__input {
+  position: absolute !important;
+  left: -9999px !important;
+}
+#full-stars-example-two .rating__input--none {
+  display: none;
+}
+#full-stars-example-two .rating__label {
+  cursor: pointer;
+  padding: 0 0.1em;
+  font-size: 2rem;
+}
+#full-stars-example-two .rating__icon--star {
+  color: orange;
+}
+#full-stars-example-two .rating__input:checked ~ .rating__label .rating__icon--star {
+  color: #ddd;
+}
+#full-stars-example-two .rating-group:hover .rating__label .rating__icon--star {
+  color: orange;
+}
+#full-stars-example-two .rating__input:hover ~ .rating__label .rating__icon--star {
+  color: #ddd;
+}
+</style> */ #}
+{# {% endblock %}
+
+{% block body %}
+
+    {% for message in app.flashes('notice') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    <h1>Product</h1>
+    <h3>Rating: {{ avg }}</h3> #}
+
+    {# <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ product.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td>{{ product.picture }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ product.price }}</td>
+            </tr>
+            <tr>
+                <th>Size</th>
+                <td>{{ product.size }}</td>
+            </tr>
+            <tr>
+                <th>Weight</th>
+                <td>{{ product.weight }}</td>
+            </tr>
+            <tr>
+                <th>Stock</th>
+                <td>{{ product.stock }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ product.fkCategory.name }}</td>
+            </tr>
+            <tr>
+                <th>Supplier</th>
+                <td>{{ product.fkSupplier.name }}</td>
+            </tr>
+            <tr>
+                <th>Discount</th>
+                <td>{{ product.discount }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_product_index') }}">back to list</a>
+
+    <a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a> #}
+    {# <a href="{{ path('app_product_review', {'id': product.id}) }}">review</a> #}
+    
+    {# <form action="{{ path('app_cart_add', {'id': product.id}) }}">
+        <input class="form-control me-2" type="number" name="amount" placeholder="amount" value=1>
+        <button class="btn btn-outline-success" type="submit">Add cart</button>
+    </form> #}
+
+    {# Review #}
+    {# <form action="{{ path('app_product_review', {'id': product.id}) }}">
+        <div id="full-stars-example-two">
+            <div class="rating-group">
+                <input disabled class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
+                <label aria-label="1 star" class="rating__label" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                <input checked class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
+                <label aria-label="2 stars" class="rating__label" for="rating3-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
+                <label aria-label="3 stars" class="rating__label" for="rating3-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
+                <label aria-label="4 stars" class="rating__label" for="rating3-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
+                <label aria-label="5 stars" class="rating__label" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
+            </div>
+        </div>
+        <textarea class="form-control me-2" type="textarea" name="review" placeholder="Write your review here.."></textarea>
+        <button class="btn btn-outline-success" type="submit1">Send</button>
+    </form>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Review</th>
+                <th>Rating</th>
+                <th>Action</th>
+            </tr>
+            {% for review in reviews %}
+            <tr>
+                <td>{{ review.review }}</td>
+                <td>{{ review.rating }}/5</td>
+                <td><a href="{{ path('app_review_delete', {'id': review.id, 'prodid': review.fkProductId.id}) }}">delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> #}
+
+    {# Q&A #}
+    {# <table class="table">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>QuestionDate</th>
+                <th>actions</th>
+                <th>Answers</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% set i = 0 %}
+        {% set index = 0 %}
+        {% for question in questions %}
+            <tr>
+                <td>{{ question.question }}</td>
+                <td>{{ question.questionDate ? question.questionDate|date('Y-m-d') : '' }}</td>
+                 <td><a href="{{ path('app_prod_answer_new',{'id':question.id}) }}" class="btn btn-success" role="warning" >Answer question</a> </td>   
+                </td>
+            </tr>
+                {% if answers[index] == null %}
+                    <tr>
+                        <td colspan="4">no records found</td>
+                    </tr> #}
+                {# {% endif %}  #}
+                {# {% else %}
+
+                {% for answer in answers %}
+                {% if answer != null %}
+                {% for a in answer %}
+                {% if question.id == a.fk_questionId.id %}
+                <tr>    
+                <td>{{ a.answer }}</td>
+                </tr>   
+                
+                 {% endif %} 
+                {% set i = i +1 %}
+                {% endfor %}
+                {% endif %} #}
+                
+                {# {{ question.id }} #}
+                
+                 
+                {# {% endfor %}
+                {% set index = index + 1 %}
+                {% endif %}
+        {% endfor %}
+        </tbody>
+    <a href="{{ path('newQuestion', {'id': product.id}) }}" class="btn btn-warning" role="warning" >Ask a question !</a>
+
+    </table>
+
+    <img src="{{ asset('pictures/' ~ product.picture) }}" alt=""> #}
+
+    {# {{ include('product/_delete_form.html.twig') }} #}
+
+{# {% endblock %} #}
+
+{% block body %} 
+
+    <div class="container mt-5 mb-5 " style="width: 80%;">
+        <h2 class="mb-5 loww">Product Details:</h2>
+        <div class=" card mb-3 " style="width: 100%;">
+            <div class="row g-0 ">
+                <div class="col-md-6 ">
+                    <img src="{{asset('pictures/' ~ product.picture)}}" class="img-fluid rounded-start " alt="... ">
+                </div>
+                <div class="col-md-6 ">
+                    <div class="card-body ">
+                        <h1 class="card-title fw-bolder">{{ product.name }}</h1>
+                            <h4>
+                                {% if avg != 0 %}
+                                {% for i in 1..avg %}
+                                    <p class="fs-5 rating__icon rating__icon--star fa fa-star coloured"></p>
+                                {% endfor %}
+                                {% endif %}
+                            <h4 class="card-text mt-4 mb-4 fs-5"><p>€{{ product.price }},-</p></h4>
+                            <h5 class="card-text mt-4 mb-4 fs-5">Category: {{ product.fkCategory.name }}</h5>
+                            {# <p class="card-text fw-light">Test: Wahtever</p> #}
+                            <hr>
+                            <p class="fs-5">{{ product.description }}</p>
+
+                            <form action="{{ path('app_cart_add', {'id': product.id}) }}">
+                                <input class="form-control me-2" style="width: 10%;" type="number" name="amount" placeholder="amount" value=1>
+                                <button class="btn btn-dark mt-4" type="submit">Add cart</button>
+                            </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-pills  container" style="width: 80%;" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link " id="pills-description-tab" data-bs-toggle="pill" data-bs-target="#pills-description" type="button" role="tab" aria-controls="pills-description" aria-selected="true">Description</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-specification-tab" data-bs-toggle="pill" data-bs-target="#pills-specification" type="button" role="tab" aria-controls="pills-specification" aria-selected="false">Specification</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-reviews-tab" data-bs-toggle="pill" data-bs-target="#pills-reviews" type="button" role="tab" aria-controls="pills-reviews" aria-selected="false">Reviews</button>
+        </li>
+
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">    <div class="container description mt-5" style="width: 80%;"><p class="fs-5">{{ product.description }}</p>
+        </div></div>
+        <div class="tab-pane fade" id="pills-specification" role="tabpanel" aria-labelledby="pills-specification-tab">    <div class="container" style="width: 80%;">
+            <div class="d-flex mt-5 mb-5">
+                <div class="leftside ms-5" style="width: 60%;">
+                    <p class="fs-5">Price</p><hr>
+                    <p class="fs-5">Power</p><hr>
+                    <p class="fs-5">Weight</p><hr>
+                    <p class="fs-5">Stock</p><hr>
+                </div>
+                <div class="rightside" style="width: 40%;">
+                    <p class="fs-5">€{{ product.price }},-</p><hr>
+                    <p class="fs-5">{{ product.size }} Hz</p><hr>
+                    <p class="fs-5">{{ product.weight }} Gramm</p><hr>
+                    <p class="fs-5">{{ product.stock }}</p><hr>
+                </div>
+            </div>
+        </div></div>
+        <div class="tab-pane fade mt-5 mb-5" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">    
+            <div class="container reviews d-flex flex-wrap" style="width: 80%;">
+                <div class="row" style="width: 80%;">
+                {% for review in reviews %}
+                <div class="review col-lg-8">
+                    {# <h2>NAME</h2> #}
+                    {% for i in 1..review.rating %}
+                        <p class="fs-5 rating__icon rating__icon--star fa fa-star coloured"></p>
+                    {% endfor %}
+                    {# <p class="fs-5">{{ review.rating }}/5</p> #}
+                    <p class="fs-5">{{ review.review }}</p>
+                </div>
+                {% endfor %}
+
+                <div class="createReview col-lg-4 mb-4">
+                    <form action="{{ path('app_product_review', {'id': product.id}) }}">
+                        <div id="full-stars-example-two">
+                            <div class="rating-group">
+                                <input disabled class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
+                                <label aria-label="1 star" class="rating__label" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input checked class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
+                                <label aria-label="2 stars" class="rating__label" for="rating3-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
+                                <label aria-label="3 stars" class="rating__label" for="rating3-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
+                                <label aria-label="4 stars" class="rating__label" for="rating3-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
+                                <label aria-label="5 stars" class="rating__label" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
+                            </div>
+                        </div>
+                        <textarea class="form-control me-2" type="textarea" name="review" placeholder="Write your review here.."></textarea>
+                        <button class="btn btn-outline-success" type="submit1">Send</button>
+                    </form>
+                    {# <h3>Add a Review</h3>
+                    <p>Your rating: STARSIGNS</p>
+                    <input type="text" class="form-control mt-4 mb-4" style="width: 100%;" placeholder="First name">
+                    <input type="text" class="form-control mt-4 mb-4" style="width: 100%;" placeholder="Last name">
+                    <input type="text" class="form-control mt-4 mb-4" style="width: 100%;" placeholder="Email">
+                    <input type="textarea" class="form-control mt-4 mb-4" style="width: 100%;" placeholder="Review">
+                    <button type="submit">Add Review</button> #}
+                </div>
+
+            </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="container reviews d-flex flex-wrap" style="width: 80%;">
+                <div class="review" style="width: 60%;">
+                    <div class="d-flex justify-content-between">
+                        <div class="left">
+                            {# {% set i = 0 %}
+                            {% set index = 0 %}
+                            {% for question in questions %}
+                            <h2>{{ question.question }}</h2>
+                            <p class="fs-5">                {{ question.questionDate ? question.questionDate|date('Y-m-d') : '' }}
+                            </p>
+                            <a href="{{ path('app_prod_answer_new',{'id':question.id}) }}" class="btn btn-success" role="warning" >Answer question</a> #}
+                        </div>
+                        <div class="right me-5">
+                            {# button for reply #}
+                            {# <a href="{{ path('app_prod_answer_new',{'id':question.id}) }}" class="btn btn-success" role="warning" > #}
+                            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Reply</button></a>
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Answer the question</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Username:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="message-text" class="col-form-label">Message:</label>
+                                            <textarea class="form-control" id="message-text"></textarea>
+                                        </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Send message</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            {# button end for reply  #}
+                        </div>
+                    </div>
+                    <div class="left ms-4">
+                        <h2>NAME</h2>
+                        <p class="fs-5">DATE</p>
+                    </div>
+            </div>
+            <div class="createReview" style="width: 40%;">
+                <h3>Add a Question</h3>
+                <input class="form-control mt-4 mb-4" type="text" style="width: 100%;" placeholder="Username">
+                <input class="form-control mt-4 mb-4" type="text" style="width: 100%;" placeholder="Question">
+
+            </div>
+        </div>
+      </div>
+
+{% endblock %}

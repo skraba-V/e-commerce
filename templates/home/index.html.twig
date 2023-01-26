@@ -1,0 +1,176 @@
+{% extends "base.html.twig" %} {% block body %}
+
+
+    <div class="slide text-center justify-content-center">
+        <img src="{{asset('pictures/5328.jpg')}}" class="show">
+        <div class="content"> 
+            <h3 class="move"> Move yourself with music </h3>
+        <a href="{{ path('app_homeproducts') }}"><input type="button" class="btn btn-light btnfont fs-5" value="Show products"></a>
+            
+        </div>
+    </div>
+
+
+<div class="slideshow-container bg-light">
+    <div class="mySlides">
+        <h2>Click & collect</h2>
+        <i>Online bestellen und direkt im Store abholen</i>
+    </div>
+
+    <div class="mySlides">
+        <h2>Speziell für Sie</h2>
+        <i>Jetzt Onlineberatung über Whatsapp.</i>
+    </div>
+
+    <div class="mySlides">
+        <h2>Gratis Versand</h2>
+        <i>Bestellen Sie über €30,- und kriegen Sie ihre Bestellung ganz beiuem gratis nachhause geschickt</i>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+    <div class="dot-container ">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+</div>
+
+<div class="text-center mt-5 mb-5">
+    <h2>Popular Items</h2>
+    <p class="fs-5">These are our most sold items</p>
+</div>
+<div class="container d-flex text-center">
+    <div class="row">
+        <div class="col-lg-4 col-md-6">
+            <a href="{{ path('app_product_show', {'id': products[0].id}) }}">
+                <img src="{{asset('pictures/' ~ products[0].picture)}}" style="max-width: 100%;" alt="">
+            </a>
+            <p class="mt-4 container fs-5">Originally created for the hardwood, the Dunk later took to the streets—and as they say, the rest is history. More than 35 years after its debut, the silhouette still delivers bold, defiant style and remains a coveted look for crews across both sport and culture</p>
+            <p class="fs-5">€{{ products[0].price }},-</p>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <a href="{{ path('app_product_show', {'id': products[1].id}) }}">
+                <img src="{{asset('pictures/' ~ products[1].picture)}}" style="max-width: 100%;" alt="">
+            </a>
+            <p class="mt-4 container fs-5">Originally a classic Nike hoops shoe, the Dunk was organically adopted by skate culture—and in time re-engineered for Nike SB.</p>
+            <p class="fs-5">€{{ products[1].price }},-</p>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-5">
+            <a href="{{ path('app_product_show', {'id': products[2].id}) }}">
+                <img src="{{asset('pictures/' ~ products[2].picture)}}" style="max-width: 100%;" alt="">
+            </a>
+            <p class="mt-4 container fs-4">A paisley Swoosh channels vintage vibes back onto the street, while the plush, low-cut collar lets you take your game anywhere.</p>
+            <p class="fs-5">€{{ products[2].price }},-</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="card mb-3 boxborder bg-light">
+    <div class="row g-0">
+        <div class="col-md-7">
+            <img src="{{asset('pictures/151-1511522_music-headphones.jpg')}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-5 d-flex align-items-center text-end">
+            <div class="card-body m-5">
+                <h3 class="card-title">Discover our store and get in love with your new headphones.</h3>
+                <p class="card-text fs-5">We got all kind of brands. Doesnt matter where you go, we got your back! Discover our store and make yourself happy!</p>
+                <a href="{{ path('app_filter', {filter: 4}) }}"><input type="button" class="btn btn-dark btnfont fs-5" value="Discover more "></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<section>
+    <div class="reveal text-center">
+        <h2>Our categories</h2>
+        
+        <div class="text-container row mb-5">
+            <div class="col-lg-4 col-md-6 text-box">
+                <h3 class=" m-3 pio">In-ear headphones & earbuds</h3>
+                <a href="{{ path('app_filter', {filter: 1}) }}">
+                    <img class="slikaop" src="{{asset('pictures/31lKGXyonvL.jpg')}}">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 text-box">
+                <h3 class=" m-3 pio">Over & on-ear headphones</h3>
+                <a href="{{ path('app_filter', {filter: 2}) }}">
+                    <img class="slikaop" src="{{asset('pictures/61eJhLsaV0L-63bee682dcdb8.jpg')}}">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 text-box">
+                <h3 class="m-3 pio">Wireless headphones</h3>
+                <a href="{{ path('app_filter', {filter: 3}) }}">
+                    <img class="slikaop" src="{{asset('pictures/audiosanctuary_audeze_lcd_i3_1.jpg')}}">
+                </a>
+            </div>
+        </div>
+        <div>
+             <a href="{{ path('app_homeproducts') }}" class="btn btn-dark btnfont fs-5">See more!</a>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="card mb-3 boxborder">
+    <div class="row g-0">
+        <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center">
+            <div class="card-body text-start" style="max-height: 320px;">
+                <img src="{{asset('pictures/ig2.png')}}" style="max-height: 80px;" alt="">
+                <h3 class="card-title text-uppercase socialmediaText mt-3 ">Get inspired by Instagram</h3>
+                <p class="card-text fs-5">Are you looking for new headphones? Get in touch with us on Instagram. We are posting daily</p>
+                <input type="button" value="Get in touch!" class="btn btn-dark btnfont mt-2 fs-5">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 igpicture">
+            <div class="random">
+                <img src="{{asset('pictures/eee9H8z.jpg')}}" class="img-fluid image" alt="...">
+                <div class="middle">
+                    <div class="igicon">
+                        <a href=""><img class="igcolor" src="{{asset('pictures/igicon.png')}}"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+</div>
+
+
+
+<section class="absolute">
+    <div class="reveal text-center absolute">
+        <h2>TOP PICKS</h2>
+        <p class="text-center fs-5">These are our alltime top picks. Click on the picture and get directly to your headphones.</p>
+        <div class="text-container row mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <a href="{{ path('app_product_show', {'id': products[2].id}) }}">
+                        <img src="{{asset('pictures/' ~ products[2].picture)}}" class="slikaop" alt="">
+                    </a>
+                    <p class="fs-5">€{{ products[2].price }},-</p>
+                </div> 
+                <div class="col-lg-4 col-md-6">
+                    <a href="{{ path('app_product_show', {'id': products[3].id}) }}">
+                        <img src="{{asset('pictures/' ~ products[3].picture)}}" class="slikaop" alt="">
+                    </a>
+                    <p class="fs-5">€{{ products[3].price }},-</p>
+                </div> 
+                <div class="col-lg-4 col-md-6">
+                    <a href="{{ path('app_product_show', {'id': products[8].id}) }}">
+                        <img src="{{asset('pictures/' ~ products[8].picture)}}" class="slikaop" alt="">
+                    </a>
+                    <p class="fs-5">€{{ products[8].price }},-</p>
+                </div> 
+        </div>
+        <div>
+            <a href="{{ path('app_homeproducts') }}" class="btn btn-dark btnfont fs-5">Load more</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

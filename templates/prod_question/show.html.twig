@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProdQuestion{% endblock %}
+
+{% block body %}
+    <h1>ProdQuestion</h1>
+    {% for question in questions %}
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ question.prod_question.id }}</td>
+            </tr>
+            <tr>
+                <th>Question</th>
+                <td>{{ question.prod_question.question }}</td>
+            </tr>
+            <tr>
+                <th>QuestionDate</th>
+                <td>{{ question.prod_question.questionDate ? prod_question.questionDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+   
+
+
+    {# {{ include('prod_question/_delete_form.html.twig') }} #}
+{% endblock %}

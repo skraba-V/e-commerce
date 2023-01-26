@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+    {# {{ form_widget(form) }}
+    {{ form_widget(formloc) }} #}
+    {{ form_row(form.email) }}
+    {{ form_row(form.fName) }}
+    {{ form_row(form.lName) }}
+    {{ form_row(form.address) }}
+    {{ form_row(formloc.country) }}
+    {{ form_row(formloc.city) }}
+    {{ form_row(formloc.zip) }}
+    {{ form_row(form.pictureUrl) }}
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

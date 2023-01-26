@@ -1,0 +1,5 @@
+{{ form_start(form) }}
+    {{ form_row(form.answer) }}
+    {{ form_row(form.answerDate) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

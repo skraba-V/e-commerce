@@ -1,0 +1,109 @@
+ <link rel="stylesheet" href="{{asset('social.css')}}">
+ <div class="bg-light">
+<div class="container test31 pb-5 pt-5">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+            <h3><img src="{{asset('pictures/delivery-box.png')}}" width="60px" alt=""></h3>
+            <h4>Express Delievery</h4>
+            <p class="fs-5">
+                We promise that your order will reach within 3 work days
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+            <h3><img src="{{asset('pictures/timer.png')}}" width="60px" alt=""></h3>
+            <h4>24/7 hour support</h4>
+            <p class="fs-5">
+                We are supporting our customers 24 hours a day. You can reach us anytime
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+            <h3><img src="{{asset('pictures/transaction.png')}}" width="60px" alt=""></h3>
+            <h4>Moneyback gurantee</h4>
+            <p class = "fs-5">
+                You changed your mind about the product? No problem. We have a 30 day return policy.
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+            <h3 class=""><img src="{{asset('pictures/quality.png')}}" width="60px" alt=""></h3>
+            <h4>Secure payment</h4>
+            <p class="fs-5">
+                Customers security is our number one priority. Thats why we are only using secure payment methods.
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="bg-dark text-center d-flex justify-content-center">
+    <!-- links to social media -->
+    <div class="container">
+        <div class="row">
+            <div class="s-left col-lg-3 col-md-12 col-sm">
+                <!-- Socials -->
+                <h4 class="ps-3 pt-5 mt-4 text-light">Find us on:</h4>
+                <div class="container d-flex justify-content-center">
+                    <div class="row bg-light rounded p-2">
+                    <img class ="imgSocial" src="{{asset('pictures/'~ 'favifacebook.png')}}" </div>
+                    <img class ="imgSocial" src="{{asset('pictures/'~ 'faviinsta.png')}}" </div>
+                     <img class ="imgSocial" src="{{asset('pictures/'~ 'faviwhatsapp.png')}}" </div>
+                   </div>
+                </div>
+                <!-- Navs -->
+                
+                    <h5 class=" text-light pt-3 pb-3">Payment methods</h5>
+                     <div class="container">
+                       <div class="row d-flex justify-content-center">
+                           <div class="bg-light rounded pb-3 pt-3"><div></div>
+                        <img class ="imgpay" src="{{asset('pictures/'~ 'paypal.png')}}"</div>
+                        <img class ="imgpay" src="{{asset('pictures/'~ 'visa.png')}}"</div>
+                        <img class ="imgpay" src="{{asset('pictures/'~ 'klarna.png')}}"</div>
+                         <img class ="imgpay" src="{{asset('pictures/'~ 'maestro.png')}}"</div>
+                        </div>
+                <a id="contact" href="mailto:gabriel.skraba6@gmail.com" class="ps-3 mt-1 mb-4 pt-3 text-light fs-4"><u>Click to contact us</u></a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Form Contact -->
+           
+            
+             <div class="s-right col-lg-5 mt-5 mb-5 col-md-12 col-sm text-white">
+                 <h3 class="mb-3">We are located in:</h3>
+            <center><div id="map"></div></center>
+            </div>
+             <div class="s-last col-lg-4 d-flex justify-content-center col-md-12 col-sm">
+                <img id="hassla" class="p-5 text-center imgfooter" src="{{asset('pictures/3771046.png')}}" width="450px" alt="pic">
+                <h3></h3>
+            </div>
+          <script>
+    let markers = [];
+    function initMap() {
+        var mlocation = {
+            lat: 48.20849,
+            lng: 16.37208
+        };
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: mlocation,
+            zoom: 12
+        });
+
+        let marker = new google.maps.Marker({
+            map: map,
+            position: mlocation
+        });
+        markers.push(marker);
+    };
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtjaD-saUZQ47PbxigOg25cvuO6_SuX3M&callback=initMap" async defer></script>
+            </div>
+
+        </div>
+
+    </div>
+
+</div> 
+
+
+               
+    

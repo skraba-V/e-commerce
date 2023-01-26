@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ProdAnswer{% endblock %}
+
+{% block body %}
+    <h1>Create new ProdAnswer</h1>
+
+    {{ include('prod_answer/_form.html.twig') }}
+
+    <a href="{{ path('app_answer_index') }}">back to list</a>
+{% endblock %}

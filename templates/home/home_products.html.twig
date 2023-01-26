@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset("style2.css")}}">
+<link rel="stylesheet" href="{{ asset("style.css")}}">{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="text-center">
+            <div class="row">
+                <div class="align-items-center  mb-5 mt-5 ">
+                    <h2 class="mico mt-5">Products</h2>
+                
+                </div>
+                {% for product in products %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 ">
+                        <a href="{{path('app_product_show', {'id': product.id})}}"><img src="{{asset('pictures/' ~ product.picture)}}" class="mb-3 maca"></a>
+                        <a href="{{path('app_product_show', {'id': product.id})}}">{{product.name}}</a>
+                        {# <p class="mt-2">STARS FROM REVIEWS</p> #}
+                        <p class="fs-4">€ {{product.price}} ,-</p>
+                    </div>
+                {% endfor %}    
+            </div>
+        </div>
+    </div>
+{% endblock %}

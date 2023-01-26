@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+{% block navbar %}{% endblock %}
+{% block title %}Register{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="register.css">{% endblock %}
+{% block body %}
+{% for flash_error in app.flashes('verify_email_error') %}
+<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+{% endfor %}
+
+<div class=" d-flex justify-content-center mt-5 mb-5">
+    <form class="p-5 w-50 rounded test row">
+        <h3 class="text-center fw-bold">Register</h3>
+        <p class=" text-center fw-light mb-5 fs-5">Create your account to get full access</p>
+        <div class="mb-3 col-md-6">        
+        {# {{ form_widget(registrationForm) }} #} 
+        {{ form_start(registrationForm) }} 
+        {{ form_row(registrationForm.fName) }}
+        </div>    
+        <div class="mb-3 col-md-6">    
+        {{ form_row(registrationForm.lName) }} 
+        </div>
+        <div class="mb-3 col-md-6">
+        {{ form_row(registrationForm.email) }} 
+        </div>
+        <div class="mb-3 col-md-6">
+        {{ form_row(registrationForm.plainPassword) }} 
+        </div>
+        <div class="mb-3 col-12">
+        {{ form_row(registrationForm.address)}} 
+        </div>      
+        <div class="mb-3 col-md-6">  
+        {{ form_row(registrationForm.city) }} 
+        </div>
+        <div class="mb-3 col-md-4">
+        {{ form_row(registrationForm.country) }} 
+        </div>
+        <div class="mb-3 col-md-2">
+        {{ form_row(registrationForm.zip) }} 
+        </div>
+        <div class="mb-3 col-12">
+        {{ form_row(registrationForm.pictureUrl) }} 
+        </div>
+        <div class="mb-3 col-12">
+            <div class="form-check">
+        {{ form_row(registrationForm.agreeTerms) }}
+            </div>
+        </div>
+        <div class="col-12 mt-4">
+        <button type="submit" class="btn btn-dark btn-md">Register</button> 
+        </div>
+        <div class="col-12 mt-3">
+            <p class="fw-light fs-5">Already have an account?
+                <a href="{{path('app_login')}}"><u>Login</u></a> here
+            </p>
+        </div>
+    </form>
+</div>
+        {{ form_end(registrationForm) }}
+        {% endblock %}
+        {% block footer %}{% endblock %}

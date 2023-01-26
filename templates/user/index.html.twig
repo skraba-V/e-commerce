@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+     <link rel="stylesheet" href="{{asset('style.css')}}">
+{% endblock %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1 class="loww">User index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                {# <th>Roles</th> #}
+                {# <th>Password</th> #}
+                <th>FName</th>
+                <th>LName</th>
+                <th>Address</th>
+                <th>BanStatus</th>
+                {# <th>Picture</th> #}
+                <th>IsVerified</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                {# <td>{{ user.roles ? user.roles|json_encode : '' }}</td> #}
+                {# <td>{{ user.password }}</td> #}
+                <td>{{ user.fName }}</td>
+                <td>{{ user.lName }}</td>
+                <td>{{ user.address }}</td>
+                <td>{{ user.banStatus ? user.banStatus|date('Y-m-d') : '' }}</td>
+                {# <td>{{ user.picture }}</td> #}
+                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a class="btn btn-success" href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
+                    <a class="btn btn-warning" href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                    <a class="btn btn-danger" href="{{ path('app_user_ban', {'id': user.id}) }}">ban</a>
+                    {{ include('user/_delete_form.html.twig') }}
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# <a href="{{ path('app_user_new') }}">Create new</a> #}
+{% endblock %}

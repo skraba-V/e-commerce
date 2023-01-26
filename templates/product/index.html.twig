@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+     <link rel="stylesheet" href="{{asset('style.css')}}">
+{% endblock %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+    <h1 class="loww">Product index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Picture</th>
+                <th>Price</th>
+                <th>Size</th>
+                <th>Weight</th>
+                <th>Stock</th>
+                <th>Category</th>
+                <th>Discount</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            {% if product.hidden == 1 %}
+                <tr style="background-color: rgba(255, 0, 0, 0.3)">
+            {% else %}
+                <tr>
+            {% endif %}
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.picture }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.size }}</td>
+                <td>{{ product.weight }}</td>
+                <td>{{ product.stock }}</td>
+                <td>{{ product.fkCategory.name }}</td>
+                <td>{{ product.discount }}</td>
+                <td>
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}">show</a>
+                    <a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a>
+                    <a href="{{ path('app_product_hide', {'id': product.id}) }}">(un)hide</a>
+                    {{ include('product/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="text-center m-5">
+    <a href="{{ path('app_product_new') }}" class="btn btn-primary">Create new</a>
+</div>
+{% endblock %}
